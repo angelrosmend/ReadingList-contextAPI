@@ -4,7 +4,7 @@ export const bookReducer = (state, action) => {
     switch (action.type) {
         case 'ADD_BOOK':
             return [...state,{
-            title: action.book,title,
+            title: action.book.title,
             author: action.book.author,
             id: generateRandomId()
         }]
@@ -12,6 +12,6 @@ export const bookReducer = (state, action) => {
             return state.filter(book => book.id !== action.id)
     
         default:
-            state
+          return state
     }
 }
